@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
-<connector-plugin class='cratedb_jdbc' superclass='jdbc' plugin-version='0.0.1' name='CreateDB' version='18.1' min-version-tableau='2020.4'>
+<connector-plugin class='cratedb_jdbc' superclass='jdbc' plugin-version='0.0.1' name='CrateDB' version='18.1' min-version-tableau='2020.4'>
   <vendor-information>
       <company name="Crate.io"/>
       <support-link url="https://github.com/crate/tableau-connector"/>
