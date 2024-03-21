@@ -929,6 +929,10 @@
       <formula>CAST(TRUNC(EXTRACT(ISODOW FROM %1)) AS INTEGER)</formula>
       <argument type='datetime' />
     </function>
+    <function group='date' name='ISDATE' return-type='bool'>
+        <formula>TRY_CAST(%1 AS DATE) IS NOT NULL</formula>
+        <argument type='str'/>
+    </function>
     <date-function name='DATEADD' return-type='datetime'>
       <formula>(%3 + %2 * INTERVAL &apos;1 %1&apos;)</formula>
       <formula part='quarter'>(%3 + %2 * 3 * INTERVAL &apos;1 MONTH&apos;)</formula>
