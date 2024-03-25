@@ -8,7 +8,7 @@ we circumvent/fix those limitations with our custom connector.
 
 You will need two things:
 
-The `postgresql jdbc driver` and the `cratedb_jdbc`
+The `postgresql jdbc driver` and the `cratedb_tableau_connector`.
 
 ### Get the Postgresql jdbc driver.
 
