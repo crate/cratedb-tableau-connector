@@ -22,7 +22,7 @@ The latest tested one is `postgresql-42.7.3.jar`
 
 ### Get the connector.
 
-Clone the repository `git clone https://github.com/crate/tableau-connector.git` or manually
+Clone the repository `git clone https://github.com/crate/cratedb-tableau-connector.git` or manually
 download `cratedb_jdbc`.
 
 Put it in: 
@@ -49,5 +49,5 @@ For older versions see https://help.tableau.com/current/pro/desktop/en-us/exampl
 This custom connector aims to offer the best Tableau experience possible, this is a work in progress since 
 PostgresSQL compatibility is not 100% and is bound to change over time.
 
-We test compatibility issues with Tableau's connector sdk (TDVT),
-it is tracked in https://github.com/crate/tableau-connector/issues/2
+We test compatibility issues with Tableau's connector sdk (TDVT).
+Progress is tracked in https://github.com/crate/cratedb-tableau-connector/issues/2
