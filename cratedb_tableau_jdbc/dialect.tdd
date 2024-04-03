@@ -411,7 +411,7 @@
             <argument type='real'/>
         </function>
         <function group='cast' name='DATETIME' return-type='datetime'>
-            <formula>CAST(%1 AS TIMESTAMP)</formula>
+            <formula>CAST((CASE WHEN %1 = '' THEN NULL ELSE %1 END) AS TIMESTAMP)</formula>
             <argument type='str'/>
         </function>
         <function group='cast' name='DATETIME' return-type='datetime'>
@@ -431,7 +431,7 @@
             <argument type='real'/>
         </function>
         <function group='cast' name='FLOAT' return-type='real'>
-            <formula>CAST(%1 AS DOUBLE PRECISION)</formula>
+            <formula>(%1 :: DATE)</formula>
             <argument type='str'/>
         </function>
         <function group='cast' name='FLOAT' return-type='real'>
@@ -451,7 +451,9 @@
             <argument type='real'/>
         </function>
         <function group='cast' name='INT' return-type='int'>
-            <formula>CAST(TRUNC(CAST(%1 AS DOUBLE PRECISION)) AS BIGINT)</formula>
+            <formula>
+                CASE WHEN TRY_CAST(%1 AS DATE) IS NOT NULL THEN TRUNC(%1 :: DATE :: DOUBLE PRECISION) :: BIGINT ELSE NULL END
+            </formula>
             <argument type='str'/>
         </function>
         <function group='cast' name='INT' return-type='int'>
@@ -1110,7 +1112,7 @@
         </date-function>
         <date-function name='DATEPART' return-type='int'>
             <formula>CAST(TRUNC(EXTRACT(%1 FROM %2)) AS INTEGER)</formula>
-            <formula part='weekday'>(1 + CAST(EXTRACT(DOW FROM %2) AS INTEGER))</formula>
+            <formula part='weekday'>(CAST(EXTRACT(DOW FROM %2) AS INTEGER))</formula>
             <formula part='week'>CAST(FLOOR((7 + EXTRACT(DOY FROM %2) - 1 + EXTRACT(DOW FROM DATE_TRUNC(&apos;YEAR&apos;,
                 %2))) / 7) AS INTEGER)
             </formula>
@@ -1138,7 +1140,7 @@
         </date-function>
         <date-function name='DATETRUNC' return-type='datetime'>
             <formula>DATE_TRUNC('%1', %2)::TIMESTAMP</formula>
-            <formula part='weekday'>DATE_FORMAT('%j', %2) :: TIMESTAMP</formula>
+            <formula part='weekday'>%2:: TIMESTAMP</formula>
             <argument type='localstr'/>
             <argument type='str'/>
         </date-function>
@@ -1156,6 +1158,7 @@
         </date-function>
         <date-function name='DATETRUNC' return-type='datetime'>
             <formula>DATE_TRUNC('%1', %2)::TIMESTAMP</formula>
+            <formula part="dayofyear">%3</formula>
             <argument type='localstr'/>
             <argument type='str'/>
             <argument type='localstr'/>
