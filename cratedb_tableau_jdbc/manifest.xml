@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
-<connector-plugin class='cratedb_jdbc' superclass='jdbc' plugin-version='0.0.1' name='CrateDB' version='18.1' min-version-tableau='2020.4'>
+<connector-plugin class='cratedb_jdbc' superclass='jdbc' plugin-version='0.0.2' name='CrateDB' version='18.1' min-version-tableau='2020.4'>
   <vendor-information>
       <company name="Crate.io"/>
       <support-link url="https://github.com/crate/tableau-connector"/>
@@ -19,8 +19,8 @@
       <customization name="CAP_QUERY_SORT_BY" value="yes"/>
       <customization name="CAP_QUERY_SUBQUERIES" value="yes"/>
       <customization name="CAP_QUERY_TOP_N" value="yes"/>
-      <customization name="CAP_QUERY_TOP_SAMPLE" value="yes"/>
-      <customization name="CAP_QUERY_TOP_SAMPLE_PERCENT" value="yes"/>
+      <customization name="CAP_QUERY_TOP_SAMPLE" value="no"/>
+      <customization name="CAP_QUERY_TOP_SAMPLE_PERCENT" value="no"/>
       <customization name="CAP_QUERY_WHERE_FALSE_METADATA" value="yes"/>
       <customization name="CAP_QUERY_SUBQUERIES_WITH_TOP" value="yes"/>
       <customization name="CAP_SUPPORTS_SPLIT_FROM_LEFT" value="yes"/>
