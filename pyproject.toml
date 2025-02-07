@@ -1,0 +1,25 @@
+[project]
+name = "cratedb-tableau-connector"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Ivan",email = "ivan.sanchez@create.io"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "setuptools (>=75.8.0,<76.0.0)",
+    # "tdvt @ file:///C:/Users/surister/PycharmProjects/cratedb-tableau-connector/connector-plugin-sdk/tdvt"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# Dependences only. https://python-poetry.org/docs/basic-usage/#operating-modes
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.dependencies]
+tdvt = {develop = true}
