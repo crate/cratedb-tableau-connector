@@ -38,30 +38,18 @@ windows
 python3 -m poetry
 ```
 
-## 4. Clone tdvt
+## 4. Install project
 
 ```shell
-https://github.com/tableau/connector-plugin-sdk.git
+poetry install --with=test
 ```
 
-
-## 5. Install tdvt
+Check that the installation was done correctly:
 ```shell
-python3 -m poetry add --editable .\connector-plugin-sdk\tdvt\
+poetry run python -m tdvt.tdvt
 ```
 
-In windows, you might need to specify the full path, for example
+# Set up the database and connector
 
-```shell
-python3 -m poetry add -e C:\Users\surister\PycharmProjects\cratedb-tableau-connector\connector-plugin-sdk\tdvt
-```
-
-Check that the installation was done correctly by running:
-
-```
-python3 -m poetry run python -m tdvt.tdv
-```
-
-# Setting up the database and connector:
-
-Now that the environment is set up, we need to also set up the tableau test files and data.
+Now that the environment is set up, we need to also set up the
+Tableau test files and data.
