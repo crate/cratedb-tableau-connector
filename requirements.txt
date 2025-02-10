@@ -1,0 +1,4 @@
+polars
+requests
+sqlalchemy-cratedb
+tdvt @ git+https://github.com/tableau/connector-plugin-sdk/#subdirectory=tdvt
