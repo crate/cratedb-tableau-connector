@@ -1139,7 +1139,7 @@
         </date-function>
         <date-function name='DATETRUNC' return-type='datetime'>
             <formula>DATE_TRUNC('%1', %2)</formula>
-            <formula part='weekday'>%2</formula>
+            <formula part='weekday'>DATE_TRUNC('day', %2)</formula>
             <argument type='localstr'/>
             <argument type='str'/>
         </date-function>
