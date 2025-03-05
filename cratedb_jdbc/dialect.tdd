@@ -1257,7 +1257,7 @@
                 <part name='weekday' value='D'/>
             </date-part-group>
         </date-parts>
-        <format-date-literal formula="(DATE '%1')" format='yyyy-MM-dd'/>
+        <format-date-literal formula="('%1'::DATE)" format='yyyy-dd-MM'/>
         <format-datetime-literal formula="(TIMESTAMP '%1')" format='yyyy-MM-dd HH:mm:ss.SSS'/>
         <format-false literal='FALSE' predicate='FALSE'/> <!-- Requires 2020.3 or newer -->
         <format-is-distinct value='Keyword'/>
