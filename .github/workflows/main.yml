@@ -1,4 +1,4 @@
-name: Validate and Release connector
+name: CI status
 on:
   pull_request:
   push:
