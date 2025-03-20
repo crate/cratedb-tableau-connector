@@ -1,9 +1,10 @@
 # CrateDB connector for Tableau
 
-[![CI status](https://github.com/crate/cratedb-tableau-connector/actions/workflows/main.yml/badge.svg)](https://github.com/crate/cratedb-tableau-connector/actions/workflows/main.yml)
-![GitHub Release](https://img.shields.io/github/v/release/crate/cratedb-tableau-connector)
-![Static Badge](https://img.shields.io/badge/tdvt_compatibility-95%25-brightgreen?style=flat&logo=cratedb)
-![Static Badge](https://img.shields.io/badge/CrateDB-5.10.1-brightgreen?style=flat&logo=cratedb)
+[![CI status](https://github.com/crate/cratedb-tableau-connector/actions/workflows/main.yml/badge.svg?style=flat)](https://github.com/crate/cratedb-tableau-connector/actions/workflows/main.yml)
+![TDVT compatibility](https://img.shields.io/badge/TDVT%20compatibility-95%25-brightgreen?style=flat)
+![CrateDB version](https://img.shields.io/badge/CrateDB->=5.10.1-brightgreen?style=flat&logo=cratedb)
+![pgJDBC version](https://img.shields.io/badge/PostgreSQL%20JDBC%20driver-<=42.7.4-brightgreen?style=flat&logo=postgresql)
+![GitHub release](https://img.shields.io/github/v/release/crate/cratedb-tableau-connector?style=flat)
 
 ## About
 
@@ -15,14 +16,17 @@ through an intuitive interface.
 massive amounts of data in near real-time, even with complex queries. It is
 PostgreSQL-compatible, and based on Lucene.
 
+The [CrateDB connector for Tableau] provides optimal connectivity and usability
+with Tableau's line of products. It is based on the [PostgreSQL JDBC driver].
+
 ## Install
 
-You will need to acquire and install two software artefacts,
-the PostgreSQL JDBC driver, and the CrateDB connector.
+You will need to acquire and install two software artefacts, the PostgreSQL
+JDBC driver ([JAR file]), and the CrateDB connector ([TACO file]).
 
 ### PostgreSQL JDBC driver
 
-Download the driver from the [pgJDBC page] and put it into:
+Download the driver JAR file from the [pgJDBC page] into:
 
 - Windows: `C:\Program Files\Tableau\Drivers`
 - Mac: `~/Library/Tableau/Drivers`
@@ -36,7 +40,9 @@ We are currently working with upstream authors on resolving this regression.
 
 ### CrateDB connector
 
-You can find the connector on the [releases page]. Put it into:
+You can find the connector artefacts within the "Assets" sections on the
+[releases page]. Download the [TACO file], for example `cratedb_jdbc-v0.0.5.taco`,
+into:
 
 #### Tableau Desktop
 
@@ -57,30 +63,20 @@ For older versions, see [Tableau Connector SDK legacy documentation].
 
 ## Usage
 
+For development purposes, please read the [sandbox documentation](./DEVELOP.md).
+
 ### Configure data source
 
-Todo: Add a few words how to actually establish the connection to CrateDB
-after installing the driver and connector?
+When it comes to configuring a data source in Tableau, a few fragments in the
+[sandbox documentation](./DEVELOP.md) may also be applicable to a production setup.
 
+Todo: Add a dedicated section about how to install and configure the connector
+in non-development mode.
 
-### Signature verification
+## Compatibility status
 
-The current release of the connector is not signed. This issue is being addressed,
-but in the meantime, signature verification can be disabled.
-
-* On _Tableau Desktop_, please use this command-line argument: `-DDisableVerifyConnectorPluginSignature=true`
-
-* On _Tableau Server_, you can disable signature verification by setting `native_api.disable_verify_connector_plugin_signature` to `true` via TSM.
-
-More information can be found on the [Tableau Connector SDK `run-taco` documentation].
-
-
-## Status
-
-The native CrateDB connector for Tableau aims to offer excellent compatibility
-with Tableau's line of products, providing optimal user experience.
-While it does not offer 100% compatibility yet, the connector is pretty close to
-cover Tableau's test suite successfully and completely.
+Compatibility is validated using Tableau's Connector SDK, specifically using its
+[TDVT suite]. Compatibility progress is tracked in [TABLEAU-2].
 
 ```
 CrateDB version: 5.10.1
@@ -96,15 +92,15 @@ Disabled tests: 0
 Skipped tests: 0
 ```
 
-Compatibility is validated using Tableau's Connector SDK, specifically using its [TDVT suite].
-Compatibility progress is tracked in [TABLEAU-2].
-
 
 [CrateDB]: https://cratedb.com/database
+[CrateDB connector for Tableau]: https://github.com/crate/cratedb-tableau-connector
+[JAR file]: https://en.wikipedia.org/wiki/JAR_(file_format)
 [pgJDBC page]: https://jdbc.postgresql.org/download/
+[PostgreSQL JDBC driver]: https://jdbc.postgresql.org/
 [releases page]: https://github.com/crate/cratedb-tableau-connector/releases
+[TACO file]: https://help.tableau.com/current/pro/desktop/en-us/examples_connector_sdk.htm
 [Tableau]: https://www.tableau.com/
 [Tableau Connector SDK legacy documentation]: https://help.tableau.com/current/pro/desktop/en-us/examples_connector_sdk.htm
-[Tableau Connector SDK `run-taco` documentation]: https://tableau.github.io/connector-plugin-sdk/docs/run-taco
 [TABLEAU-2]: https://github.com/crate/cratedb-tableau-connector/issues/2
 [TDVT suite]: https://tableau.github.io/connector-plugin-sdk/docs/tdvt

@@ -231,3 +231,20 @@ taco file generated in the release.
 4. Click on `Generate release notes`, amend the notes as needed and publish.
 5. The pipeline will run and upload the taco file to the releases' assets, check that the pipeline
 runs correctly and the file exists.
+
+
+## Signature verification
+
+If you want to install a release that is not signed, signature verification can
+be disabled.
+
+* On _Tableau Desktop_, please use this command-line argument:
+  `-DDisableVerifyConnectorPluginSignature=true`
+
+* On _Tableau Server_, you can disable signature verification by setting
+  `native_api.disable_verify_connector_plugin_signature` to `true` via TSM.
+
+More information can be found on the [Tableau Connector SDK `run-taco` documentation].
+
+
+[Tableau Connector SDK `run-taco` documentation]: https://tableau.github.io/connector-plugin-sdk/docs/run-taco
