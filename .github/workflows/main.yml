@@ -91,7 +91,7 @@ jobs:
           wget -O $SIGN_TOOLS_PATH/bcprov-jdk18on-1.77.jar https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk18on/1.80/bcprov-jdk18on-1.80.jar
           
           jarsigner -J-Djava.class.path=$SIGN_TOOLS_PATH/digicert-jce-1.0.jar:$SIGN_TOOLS_PATH/bcprov-jdk18on-1.77.jar -keystore NONE -storetype DIGICERT -storepass NONE -providerClass com.digicert.jce.Provider -signedjar $SIGNED_TACO_FILE_PATH -sigalg SHA256withRSA -tsa http://timestamp.digicert.com $UNSIGNED_TACO_FILE_PATH ${{ secrets.SM_KEY_ALIAS }}
-          echo "SIGNED_TACO_FILE_PATH" >> $GITHUB_OUTPUT
+          echo "SIGNED_TACO_FILE_PATH=$SIGNED_TACO_FILE_PATH" >> $GITHUB_OUTPUT
 
       - name: Upload the connector to GH release assets
         uses: softprops/action-gh-release@v2
