@@ -1,7 +1,7 @@
 # CrateDB connector for Tableau
 
 [![CI status](https://github.com/crate/cratedb-tableau-connector/actions/workflows/main.yml/badge.svg?style=flat)](https://github.com/crate/cratedb-tableau-connector/actions/workflows/main.yml)
-![TDVT compatibility](https://img.shields.io/badge/TDVT%20compatibility-95%25-brightgreen?style=flat)
+![TDVT compatibility](https://img.shields.io/badge/TDVT%20compatibility-96%25-brightgreen?style=flat)
 ![CrateDB version](https://img.shields.io/badge/CrateDB->=5.10.1-brightgreen?style=flat&logo=cratedb)
 ![pgJDBC version](https://img.shields.io/badge/PostgreSQL%20JDBC%20driver-<=42.7.4-brightgreen?style=flat&logo=postgresql)
 ![GitHub release](https://img.shields.io/github/v/release/crate/cratedb-tableau-connector?style=flat)
