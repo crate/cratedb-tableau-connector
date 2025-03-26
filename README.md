@@ -21,8 +21,7 @@ with Tableau's line of products. It is based on the [PostgreSQL JDBC driver].
 
 ## Install
 
-You will need to acquire and install two software artefacts, the PostgreSQL
-JDBC driver ([JAR file]), and the CrateDB connector ([TACO file]).
+You will need to download the PostgreSQL JDBC driver ([JAR file]), and the CrateDB connector ([TACO file]).
 
 ### PostgreSQL JDBC driver
 
@@ -40,7 +39,7 @@ We are currently working with upstream authors on resolving this regression.
 
 ### CrateDB connector
 
-You can find the connector artefacts within the "Assets" sections on the
+You can find the connector within the "Assets" sections on the
 [releases page]. Download the [TACO file], for example `cratedb_jdbc-v0.0.5.taco`,
 into:
 
@@ -51,7 +50,7 @@ into:
 
 #### Tableau Prep Builder
 
-- Windows:  `C:\Users\[Windows User]\Documents\My Tableau Prep Repository\Connectors`
+- Windows: `C:\Users\[Windows User]\Documents\My Tableau Prep Repository\Connectors`
 - MacOS: `/Users//Documents/My Tableau Prep Repository/Connectors`
 
 #### Tableau Server
@@ -60,22 +59,15 @@ into:
 
 For older versions, see [Tableau Connector SDK legacy documentation].
 
+Important: For Tableau Server, in multi node setups, the connector has to be installed in every node.
 
 ## Usage
 
 For development purposes, please read the [sandbox documentation](./DEVELOP.md).
 
-### Configure data source
-
-When it comes to configuring a data source in Tableau, a few fragments in the
-[sandbox documentation](./DEVELOP.md) may also be applicable to a production setup.
-
-Todo: Add a dedicated section about how to install and configure the connector
-in non-development mode.
-
 ## Compatibility status
 
-Compatibility is validated using Tableau's Connector SDK, specifically using its
+Compatibility is validated using Tableau's Connector SDK, using its
 [TDVT suite]. Compatibility progress is tracked in [TABLEAU-2].
 
 ```
