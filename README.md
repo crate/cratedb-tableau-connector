@@ -25,17 +25,14 @@ You will need to download the PostgreSQL JDBC driver ([JAR file]), and the Crate
 
 ### PostgreSQL JDBC driver
 
+Warning: PostgreSQL JDBC driver versions `>=postgresql-42.7.5.jar` are not compatible with CrateDB. 
+The latest validated version is `postgresql-42.7.4.jar`.
+
 Download the driver JAR file from the [pgJDBC page] into:
 
 - Windows: `C:\Program Files\Tableau\Drivers`
 - Mac: `~/Library/Tableau/Drivers`
 - Linux: `/opt/tableau/tableau_driver/jdbc` 
-
-The latest validated PostgreSQL JDBC driver version is `postgresql-42.7.4.jar`.
-The latest validated CrateDB JDBC driver is `cratedb-jdbc-standalone-2.7.0`.
-
-Note: The most recent release `postgresql-42.7.5.jar` is not compatible with CrateDB.
-We are currently working with upstream authors on resolving this regression.
 
 ### CrateDB connector
 
