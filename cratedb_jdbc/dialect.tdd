@@ -726,7 +726,9 @@
             <argument type='date'/>
         </function>
         <function group='aggregate' name='STDEV' return-type='real'>
-            <formula>STDDEV(%1) * sqrt(count(%1) / (count(%1) - 1.0))</formula>
+            <formula>
+                 (CASE WHEN COUNT(%1) = 1 THEN 0.0 WHEN COUNT(%1) &gt; 0 THEN STDDEV(%1) * sqrt(count(%1) / (count(%1) - 1.0)) END)
+            </formula>
             <unagg-formula>NULL</unagg-formula>
             <argument type='real'/>
         </function>
@@ -747,13 +749,15 @@
             <argument type='int'/>
         </function>
         <function group='aggregate' name='VAR' return-type='real'>
-            <formula>VARIANCE(%1)</formula>
+            <formula>
+                 (CASE WHEN COUNT(%1) = 1 THEN 0.0 WHEN COUNT(%1) &gt; 0 THEN VARIANCE(%1) * count(%1) / (count(%1) - 1.0) END)
+            </formula>
             <unagg-formula>NULL</unagg-formula>
             <argument type='real'/>
         </function>
         <function group='aggregate' name='VARP' return-type='real'>
-            <formula>(CASE WHEN COUNT(%1) = 1 THEN 0.0 WHEN COUNT(%1) &gt; 0 THEN POWER(STDDEV(%1) * SQRT(COUNT(%1) - 1)
-                / SQRT(COUNT(%1)), 2) ELSE NULL END)
+            <formula>
+                (CASE WHEN COUNT(%1) = 1 THEN 0.0 WHEN COUNT(%1) &gt; 0 THEN VARIANCE(%1) END)
             </formula>
             <unagg-formula>(CASE WHEN %1 IS NULL THEN NULL ELSE 0.0 END)</unagg-formula>
             <argument type='real'/>
