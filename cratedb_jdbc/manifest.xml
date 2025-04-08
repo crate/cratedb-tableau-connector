@@ -27,7 +27,8 @@
             <customization name="CAP_SUPPORTS_SPLIT_FROM_LEFT" value="yes"/>
             <customization name="CAP_SUPPORTS_SPLIT_FROM_RIGHT" value="yes"/>
 
-            <customization name="CAP_SUPPORTS_UNION" value="yes"/>
+            <customization name="CAP_JDBC_QUERY_FORCE_PREPARE" value="yes"/>
+			<customization name="CAP_SUPPORTS_UNION" value="yes"/>
             <customization name="CAP_QUERY_ALLOW_PARTIAL_AGGREGATION" value="no"/>
             <customization name="CAP_QUERY_TIME_REQUIRES_CAST" value="yes"/>
             <customization name="CAP_SUPPRESS_TEMP_TABLE_CHECKS" value="no"/>
