@@ -4,8 +4,8 @@
                   min-version-tableau='2020.4'>
     <vendor-information>
         <company name="Crate.io"/>
-        <support-link url="https://github.com/crate/tableau-connector"/>
-        <driver-download-link url="https://github.com/crate/tableau-connector"/>
+        <support-link url="https://github.com/crate/cratedb-tableau-connector"/>
+        <driver-download-link url="https://github.com/crate/cratedb-tableau-connector"/>
     </vendor-information>
     <connection-customization class="postgres_jdbc" enabled="true" version="10.0">
         <vendor name="vendor"/>
