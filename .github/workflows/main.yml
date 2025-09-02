@@ -19,13 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Tableau Connector SDK
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: tableau/connector-plugin-sdk
           ref: tableau-2024.2
 
       - name: Checkout CrateDB connector
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: cratedb-tableau-connector
 
