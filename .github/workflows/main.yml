@@ -94,7 +94,7 @@ jobs:
           echo "SIGNED_TACO_FILE_PATH=$SIGNED_TACO_FILE_PATH" >> $GITHUB_OUTPUT
 
       - name: Upload the connector to GH release assets
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         if: ${{ github.event_name == 'release' }}
         with:
           files: ${{ steps.sign-connector.outputs.SIGNED_TACO_FILE_PATH }}
