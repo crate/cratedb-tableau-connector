@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> **This repository is deprecated and archived.**
+> Please consider using the PostgreSQL JDBC connector as an alternative, see also the related 
+> [documentation](https://cratedb.com/docs/guide/integrate/tableau/) on how to do that.
+
 # CrateDB connector for Tableau
 
 [![CI status](https://github.com/crate/cratedb-tableau-connector/actions/workflows/main.yml/badge.svg?style=flat)](https://github.com/crate/cratedb-tableau-connector/actions/workflows/main.yml)
